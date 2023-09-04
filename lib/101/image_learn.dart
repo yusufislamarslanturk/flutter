@@ -13,7 +13,7 @@ class ImageLearn extends StatelessWidget {
               height: 300,
               width: 200,
               child: Image.asset(
-                "assets/Apple-Book-PNG-Photos.png",
+                "assets/png/Apple-Book-PNG-Photos.png",
                 fit: BoxFit.cover,
               ),
             )

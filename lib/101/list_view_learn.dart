@@ -18,7 +18,7 @@ class _ListViewLearnState extends State<ListViewLearn> {
         children: [
           ListTile(
             title: FittedBox(
-              child: Text('Merhaba',
+              child: Text('dadata',
                   style: Theme.of(context).textTheme.headlineLarge),
             ),
           ),

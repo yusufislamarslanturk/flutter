@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/navigation_learn.dart';
-import 'package:flutter_full_learn/demos/my_collections_demos.dart';
 
 void main() {
   runApp(const MyApp());

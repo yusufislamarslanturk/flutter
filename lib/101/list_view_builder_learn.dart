@@ -23,7 +23,7 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
-              Image.network('http://picsum.photos/700'),
+              Image.network('http://picsum.photos/500'),
               Text('$index')
             ],
           );
