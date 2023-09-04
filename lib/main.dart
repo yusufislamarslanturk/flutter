@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/101/list_view_builder_learn.dart';
+import 'package:flutter_full_learn/101/navigation_learn.dart';
+import 'package:flutter_full_learn/demos/my_collections_demos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,10 +18,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark(
           useMaterial3: true,
         ).copyWith(
-            listTileTheme:
-                ListTileThemeData(contentPadding: EdgeInsets.zero),
+            listTileTheme: const ListTileThemeData(
+                contentPadding: EdgeInsets.zero),
             progressIndicatorTheme:
-                ProgressIndicatorThemeData(color: Colors.white),
+                const ProgressIndicatorThemeData(color: Colors.white),
             splashColor: Colors.white70,
             appBarTheme: const AppBarTheme(
               centerTitle: true,
@@ -28,6 +29,6 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.black87,
               elevation: 0,
             )),
-        home: const ListViewBuilderLearn());
+        home: const NavigationLearn());
   }
 }
