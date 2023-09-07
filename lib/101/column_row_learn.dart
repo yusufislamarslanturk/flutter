@@ -36,9 +36,7 @@ class ColumnRowLearn extends StatelessWidget {
 }
 
 class _customCard extends StatelessWidget {
-  const _customCard({
-    super.key,
-  });
+  const _customCard();
 
   @override
   Widget build(BuildContext context) {

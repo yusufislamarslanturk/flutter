@@ -22,12 +22,12 @@ class _ColorLifeCycleLearnState extends State<ColorLifeCycleLearn> {
                   _backgroundColor = Colors.pink;
                 });
               },
-              icon: Icon(Icons.clear))
+              icon: const Icon(Icons.clear))
         ],
       ),
       body: Column(
         children: [
-          Spacer(),
+          const Spacer(),
           Expanded(
               child: ColorDemos(
             initialColor: _backgroundColor,

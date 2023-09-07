@@ -12,7 +12,7 @@ class _ListViewLearnState extends State<ListViewLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView'),
+        title: const Text('ListView'),
       ),
       body: ListView(
         children: [
@@ -26,7 +26,7 @@ class _ListViewLearnState extends State<ListViewLearn> {
             color: Colors.red,
             height: 300,
           ),
-          Divider(),
+          const Divider(),
           SizedBox(
             height: 300,
             child:

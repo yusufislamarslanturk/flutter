@@ -14,10 +14,11 @@ class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
     super.didChangeDependencies();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Navigate Detail Learn'),
+        title: const Text('Navigate Detail Learn'),
       ),
       body: Center(
         child: ElevatedButton.icon(
@@ -26,7 +27,7 @@ class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
             },
             icon: Icon(Icons.check,
                 color: widget.isOkey ? Colors.red : Colors.green),
-            label: widget.isOkey ? Text('Red') : Text('Accept')),
+            label: widget.isOkey ? const Text('Red') : const Text('Accept')),
       ),
     );
   }

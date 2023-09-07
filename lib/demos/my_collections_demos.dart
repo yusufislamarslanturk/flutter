@@ -16,10 +16,11 @@ class _MyCollectionsDemosState extends State<MyCollectionsDemos> {
     _items = CollectionItems().items;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Collection'),
+          title: const Text('Collection'),
         ),
         body: ListView.builder(
           padding: paddingUtility().paddingSymmetric,
@@ -33,7 +34,6 @@ class _MyCollectionsDemosState extends State<MyCollectionsDemos> {
 
 class _CategoryCard extends StatelessWidget {
   const _CategoryCard({
-    super.key,
     required CollectionModel model,
   }) : _model = model;
 
@@ -79,7 +79,7 @@ class paddingUtility {
   final paddingTop = const EdgeInsets.only(top: 10);
   final paddingBottom = const EdgeInsets.only(bottom: 20);
   final paddingGeneral = const EdgeInsets.all(20);
-  final paddingSymmetric = EdgeInsets.symmetric(horizontal: 20);
+  final paddingSymmetric = const EdgeInsets.symmetric(horizontal: 20);
 }
 
 class CollectionItems {

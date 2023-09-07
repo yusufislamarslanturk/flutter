@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/list_tile_learn.dart';
+import 'package:flutter_full_learn/202/package/launch_manager.dart';
+import 'package:flutter_full_learn/202/package_learn_view.dart';
 import 'package:flutter_full_learn/demos/login_page_demos/visible_eye.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,19 +11,29 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage>
-    with _projectUtilities {
+    with _projectUtilities, LaunchMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        )),
         automaticallyImplyLeading: false,
         actions: [
-          const Text('Kayıt Ol',
-              style: TextStyle(color: Colors.white)),
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.door_back_door_outlined,
-                  color: Colors.white)),
+          TextButton.icon(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.transparent,
+              iconColor: Colors.green,
+            ),
+            label: const Text(
+              'Kayıt Ol',
+              style: TextStyle(color: Colors.white),
+            ),
+            icon: const Icon(Icons.door_back_door_outlined),
+            onPressed: () {},
+          )
         ],
         title: const Text(_projectUtilities.title,
             style: TextStyle(color: Colors.white)),
@@ -30,11 +41,11 @@ class _LoginPageState extends State<LoginPage>
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(40),
             child: Image.asset('assets/png/logo.png',
                 height: 175, width: 175),
           ),
-          _header(),
+          const _header(),
           Padding(
             padding: _projectPadding.simetrik,
             child: _InputTextField(
@@ -52,6 +63,17 @@ class _LoginPageState extends State<LoginPage>
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const _LoginButton(),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 200),
+            child: TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.grey.shade600),
+                onPressed: () {
+                  launchURL(Uri.parse(
+                      'https://www.agarthateknoloji.com.tr'));
+                },
+                child: const Text('© Powered by Agartha Teknoloji')),
+          ),
         ],
       ),
     );
@@ -59,9 +81,7 @@ class _LoginPageState extends State<LoginPage>
 }
 
 class _header extends StatelessWidget {
-  const _header({
-    super.key,
-  });
+  const _header();
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +95,7 @@ class _header extends StatelessWidget {
 }
 
 class _LoginButton extends StatelessWidget {
-  const _LoginButton({
-    super.key,
-  });
+  const _LoginButton();
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +112,7 @@ class _LoginButton extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
                 builder: (context) {
-                  return const ListTileLearn();
+                  return const PackageLearn();
                 },
                 fullscreenDialog: true,
                 settings: const RouteSettings()),
@@ -107,7 +125,7 @@ class _LoginButton extends StatelessWidget {
 // ignore: must_be_immutable
 class _InputTextField extends StatefulWidget {
   _InputTextField(
-      {super.key, required this.labelText, required this.password});
+      {required this.labelText, required this.password});
   final String labelText;
   final bool password;
   bool isSecured = false;

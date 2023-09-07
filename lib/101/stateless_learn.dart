@@ -23,13 +23,11 @@ class StatelessLearn extends StatelessWidget {
     );
   }
 
-  SizedBox _emptyBox() => SizedBox(height: 20);
+  SizedBox _emptyBox() => const SizedBox(height: 20);
 }
 
 class _CustomContainer extends StatelessWidget {
-  const _CustomContainer({
-    super.key,
-  });
+  const _CustomContainer();
 
   @override
   Widget build(BuildContext context) {

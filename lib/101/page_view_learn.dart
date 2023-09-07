@@ -36,7 +36,7 @@ class _PageViewLearnState extends State<PageViewLearn> {
                     duration: _DurationUtility._durationLow,
                     curve: Curves.fastLinearToSlowEaseIn);
               },
-              child: Icon(Icons.chevron_left),
+              child: const Icon(Icons.chevron_left),
             ),
             FloatingActionButton(
               onPressed: () {
@@ -44,7 +44,7 @@ class _PageViewLearnState extends State<PageViewLearn> {
                     duration: _DurationUtility._durationLow,
                     curve: Curves.fastLinearToSlowEaseIn);
               },
-              child: Icon(Icons.chevron_right),
+              child: const Icon(Icons.chevron_right),
             ),
           ],
         ),

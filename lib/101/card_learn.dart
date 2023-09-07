@@ -43,7 +43,7 @@ class Projectmargins {
 }
 
 class _CustomCard extends StatelessWidget {
-  const _CustomCard({super.key, required this.child});
+  const _CustomCard({required this.child});
   final Widget child;
   @override
   Widget build(BuildContext context) {

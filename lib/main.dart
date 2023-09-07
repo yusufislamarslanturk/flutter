@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/202/model_learn_view.dart';
-import 'package:flutter_full_learn/202/service/comment_learn_view.dart';
-import 'package:flutter_full_learn/202/service/service_learn_view.dart';
-import 'package:flutter_full_learn/202/service/service_post_learn_view.dart';
+import 'package:flutter_full_learn/demos/login_page_demos/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData.dark(useMaterial3: true).copyWith(
+        theme: ThemeData(useMaterial3: true).copyWith(
             tabBarTheme: const TabBarTheme(
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.white70,
@@ -31,9 +28,10 @@ class MyApp extends StatelessWidget {
             appBarTheme: const AppBarTheme(
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,
-              backgroundColor: Colors.black87,
+              // Color.fromARGB(255, 140, 94, 20)
+              backgroundColor: Colors.black,
               elevation: 0,
             )),
-        home: const ServicePostLearn());
+        home: const LoginPage());
   }
 }

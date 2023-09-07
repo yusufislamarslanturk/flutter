@@ -20,15 +20,19 @@ class NoteDemos extends StatelessWidget {
                 padding: PaddingItems.verticalPadding,
                 child: _SubTitleWidget(
                   title: 'test data ali sda ' * 25,
+                  textAlign: TextAlign.center,
                 ),
               ),
               const Spacer(),
               ElevatedButton(
                   onPressed: () {},
                   child: const SizedBox(
-                      height: 50, child: Center(child: Text('Not Oluştur')))),
-              TextButton(onPressed: () {}, child: Text('Önemli  Notlar')),
-              SizedBox(height: 120),
+                      height: 50,
+                      child: Center(child: Text('Not Oluştur')))),
+              TextButton(
+                  onPressed: () {},
+                  child: const Text('Önemli  Notlar')),
+              const SizedBox(height: 120),
             ],
           )),
     );
@@ -37,9 +41,8 @@ class NoteDemos extends StatelessWidget {
 
 class _SubTitleWidget extends StatelessWidget {
   const _SubTitleWidget({
-    super.key,
-    this.textAlign = TextAlign.center,
     required this.title,
+    required this.textAlign,
   });
   final String title;
   final TextAlign textAlign;
@@ -47,16 +50,13 @@ class _SubTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(title,
         textAlign: textAlign,
-        style: Theme.of(context)
-            .textTheme
-            .bodySmall
-            ?.copyWith(color: Colors.black87, fontWeight: FontWeight.w400));
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+            color: Colors.black87, fontWeight: FontWeight.w400));
   }
 }
 
 class _titleWidget extends StatelessWidget {
   const _titleWidget({
-    super.key,
     required this.title,
   });
   final String title;
@@ -64,15 +64,14 @@ class _titleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(title,
-        style: Theme.of(context)
-            .textTheme
-            .headlineSmall
-            ?.copyWith(color: Colors.black87, fontWeight: FontWeight.w800));
+        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            color: Colors.black87, fontWeight: FontWeight.w800));
   }
 }
 
 class PaddingItems {
   static const EdgeInsets horizontalPadding =
       EdgeInsets.symmetric(horizontal: 20);
-  static const EdgeInsets verticalPadding = EdgeInsets.symmetric(vertical: 10);
+  static const EdgeInsets verticalPadding =
+      EdgeInsets.symmetric(vertical: 10);
 }

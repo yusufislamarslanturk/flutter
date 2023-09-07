@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomWidgetLearn extends StatelessWidget {
-  CustomWidgetLearn({super.key});
+  const CustomWidgetLearn({super.key});
   final String title = 'Food';
   @override
   Widget build(BuildContext context) {

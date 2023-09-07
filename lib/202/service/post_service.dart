@@ -67,10 +67,10 @@ class PostService implements IPostService {
       final response = await _dio.get(_PostServicePaths.posts.name);
 
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
+        final datas = response.data;
 
-        if (_datas is List) {
-          return _datas.map((e) => PostModel.fromJson(e)).toList();
+        if (datas is List) {
+          return datas.map((e) => PostModel.fromJson(e)).toList();
         }
       }
     } on DioError catch (exception) {
@@ -87,10 +87,10 @@ class PostService implements IPostService {
           queryParameters: {'postId': postId});
 
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
+        final datas = response.data;
 
-        if (_datas is List) {
-          return _datas.map((e) => CommentModel.fromJson(e)).toList();
+        if (datas is List) {
+          return datas.map((e) => CommentModel.fromJson(e)).toList();
         }
       }
     } on DioError catch (exception) {

@@ -44,11 +44,11 @@ class _ServiceLearnState extends State<ServiceLearn> {
         await Dio().get('https://jsonplaceholder.typicode.com/posts');
 
     if (response.statusCode == HttpStatus.ok) {
-      final _datas = response.data;
+      final datas = response.data;
 
-      if (_datas is List) {
+      if (datas is List) {
         setState(() {
-          _items = _datas.map((e) => PostModel.fromJson(e)).toList();
+          _items = datas.map((e) => PostModel.fromJson(e)).toList();
         });
       }
     }

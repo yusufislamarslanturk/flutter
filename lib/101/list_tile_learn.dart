@@ -6,7 +6,9 @@ class ListTileLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text('ListTile Learn'),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -22,6 +24,7 @@ class ListTileLearn extends StatelessWidget {
                     subtitle: const Text('How do use your card'),
                     leading: const Icon(Icons.money),
                     trailing: const Icon(Icons.chevron_right),
+                    iconColor: Colors.white,
                   ),
                 ),
               )

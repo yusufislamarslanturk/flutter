@@ -64,7 +64,6 @@ class _ColorDemosState extends State<ColorDemos> {
     } else if (value == _MyColors.yellow.index) {
       changeBackgroundColor(Colors.yellow);
     }
-    ;
   }
 }
 
@@ -72,7 +71,6 @@ enum _MyColors { red, yellow, green }
 
 class _colorContainer extends StatelessWidget {
   const _colorContainer({
-    super.key,
     required this.color,
   });
   final color;

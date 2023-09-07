@@ -13,7 +13,7 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListViewBuilder'),
+        title: const Text('ListViewBuilder'),
       ),
       body: ListView.separated(
         itemCount: 100,

@@ -16,8 +16,8 @@ class _StatefullLifeCycleLearnState
     return Scaffold(
       appBar: AppBar(
           title: widget.message.length.isOdd
-              ? Text('kelime Tek')
-              : Text('Kelime Çift')),
+              ? const Text('kelime Tek')
+              : const Text('Kelime Çift')),
     );
   }
 }
