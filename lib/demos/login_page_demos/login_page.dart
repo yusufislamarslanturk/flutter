@@ -127,6 +127,7 @@ class _InputTextFieldState extends State<_InputTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: TextInputAction.next,
       cursorColor: Colors.amber,
       obscureText: !isSecured,
       decoration: InputDecoration(

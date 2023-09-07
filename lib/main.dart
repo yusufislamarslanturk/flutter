@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/202/model_learn_view.dart';
+import 'package:flutter_full_learn/202/service/comment_learn_view.dart';
+import 'package:flutter_full_learn/202/service/service_learn_view.dart';
+import 'package:flutter_full_learn/202/service/service_post_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +34,6 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.black87,
               elevation: 0,
             )),
-        home: const ModelLearnView());
+        home: const ServicePostLearn());
   }
 }
