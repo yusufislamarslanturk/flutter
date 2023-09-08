@@ -22,9 +22,11 @@ class _ModelLearnViewState extends State<ModelLearnView> {
     final user2 = PostModel2(1, 2, 'b', 'a');
     user2.body = 'a';
 
+    // ignore: unused_local_variable
     final user3 = PostModel3(1, 2, 'a', 'b');
     // user3.body = 'a';
 
+    // ignore: unused_local_variable
     final user4 = PostModel4(userId: 1, id: 2, title: 'a', body: 'b');
     // user4.body = 'a';
 
@@ -32,10 +34,13 @@ class _ModelLearnViewState extends State<ModelLearnView> {
         PostModel5(userId: 1, id: 2, title: 'title', body: 'body');
     user5.userId;
 
+    // ignore: unused_local_variable
     final user6 = PostModel6(userId: 1, id: 2, title: 'a', body: 'b');
+    // ignore: unused_local_variable
     final user7 = PostModel7();
 
     // Service
+    // ignore: unused_local_variable
     final user8 = PostModel8(body: 'a');
   }
 

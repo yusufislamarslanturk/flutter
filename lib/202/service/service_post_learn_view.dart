@@ -49,7 +49,10 @@ class _ServiceLearnState extends State<ServicePostLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(name ?? ''),
+        title: const Text(
+          'Service Post',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           _isLoading
               ? const CircularProgressIndicator.adaptive()
@@ -58,23 +61,39 @@ class _ServiceLearnState extends State<ServicePostLearn> {
       ),
       body: Column(
         children: [
-          TextField(
-            controller: _titleController,
-            decoration: const InputDecoration(labelText: 'Title'),
-            keyboardType: TextInputType.text,
-            textInputAction: TextInputAction.next,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _titleController,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Title'),
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.next,
+            ),
           ),
-          TextField(
-            controller: _bodyController,
-            decoration: const InputDecoration(labelText: 'Body'),
-            textInputAction: TextInputAction.next,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _bodyController,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Body'),
+              textInputAction: TextInputAction.next,
+            ),
           ),
-          TextField(
-              controller: _userIdController,
-              keyboardType: TextInputType.phone,
-              autofillHints: const [AutofillHints.creditCardNumber],
-              decoration: const InputDecoration(labelText: 'UserId')),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+                controller: _userIdController,
+                keyboardType: TextInputType.phone,
+                autofillHints: const [AutofillHints.creditCardNumber],
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'UserId')),
+          ),
           TextButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.green)),
               onPressed: _isLoading
                   ? null
                   : () {
@@ -88,15 +107,27 @@ class _ServiceLearnState extends State<ServicePostLearn> {
                                 int.tryParse(_userIdController.text));
 
                         _addItemToService(model);
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(SnackBar(
+                                backgroundColor: Colors.green,
+                                duration: const Duration(seconds: 3),
+                                content: Text(
+                                  'Kayit Ekleme $name',
+                                  textAlign: TextAlign.center,
+                                )));
                       }
                     },
-              child: const Text('Send'))
+              child: const Text(
+                'Kayit Ekle',
+                style: TextStyle(color: Colors.white),
+              ))
         ],
       ),
     );
   }
 }
 
+// ignore: unused_element
 class _PostCard extends StatelessWidget {
   const _PostCard({
     Key? key,

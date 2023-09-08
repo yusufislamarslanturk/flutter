@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element, deprecated_member_use
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -102,6 +104,7 @@ class PostService implements IPostService {
 
 enum _PostServicePaths { posts, comments }
 
+// ignore: unused_field
 enum _PostQueryPaths { postId }
 
 class _ShowDebug {

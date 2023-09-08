@@ -1,3 +1,15 @@
+// To parse this JSON data, do
+//
+//     final commentModel = commentModelFromJson(jsonString);
+
+import 'dart:convert';
+
+CommentModel commentModelFromJson(String str) =>
+    CommentModel.fromJson(json.decode(str));
+
+String commentModelToJson(CommentModel data) =>
+    json.encode(data.toJson());
+
 class CommentModel {
   int? postId;
   int? id;
@@ -5,24 +17,28 @@ class CommentModel {
   String? email;
   String? body;
 
-  CommentModel(
-      {this.postId, this.id, this.name, this.email, this.body});
+  CommentModel({
+    this.postId,
+    this.id,
+    this.name,
+    this.email,
+    this.body,
+  });
 
-  CommentModel.fromJson(Map<String, dynamic> json) {
-    postId = json['postId'];
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    body = json['body'];
-  }
+  factory CommentModel.fromJson(Map<String, dynamic> json) =>
+      CommentModel(
+        postId: json["postId"],
+        id: json["id"],
+        name: json["name"],
+        email: json["email"],
+        body: json["body"],
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['postId'] = postId;
-    data['id'] = id;
-    data['name'] = name;
-    data['email'] = email;
-    data['body'] = body;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        "postId": postId,
+        "id": id,
+        "name": name,
+        "email": email,
+        "body": body,
+      };
 }

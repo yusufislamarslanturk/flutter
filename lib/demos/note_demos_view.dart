@@ -55,6 +55,7 @@ class _SubTitleWidget extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _titleWidget extends StatelessWidget {
   const _titleWidget({
     required this.title,

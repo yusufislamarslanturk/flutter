@@ -9,12 +9,14 @@ class ColorLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
+          // ignore: avoid_unnecessary_containers
           Container(
               child: Text('data',
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall
-                      ?.copyWith(color: Theme.of(context).splashColor)))
+                      ?.copyWith(
+                          color: Theme.of(context).splashColor)))
         ],
       ),
     );

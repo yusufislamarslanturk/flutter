@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 class PostModel1 {
   int? userId;
   int? id;
@@ -40,6 +42,7 @@ class PostModel5 {
   final int _userId;
   final int _id;
   final String _title;
+
   final String _body;
 
   int get userId => _userId;

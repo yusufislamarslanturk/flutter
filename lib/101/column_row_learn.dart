@@ -35,6 +35,7 @@ class ColumnRowLearn extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _customCard extends StatelessWidget {
   const _customCard();
 

@@ -1,9 +1,13 @@
+// ignore_for_file: unused_field
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/202/package/loading_bar.dart';
 import 'package:flutter_full_learn/202/service/comment_learn_view.dart';
 import 'package:flutter_full_learn/202/service/post_service.dart';
+import 'package:flutter_full_learn/202/service/service_post_learn_view.dart';
 import 'post_model.dart';
 
 class ServiceLearn extends StatefulWidget {
@@ -28,7 +32,8 @@ class _ServiceLearnState extends State<ServiceLearn> {
     super.initState();
     _dio = Dio(BaseOptions(baseUrl: _baseUrl));
     _postService = PostService();
-    name = 'veli';
+    name = 'Service Data';
+
     fetchPostItemsAdvance();
   }
 
@@ -57,6 +62,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
 
   Future<void> fetchPostItemsAdvance() async {
     _changeLoading();
+    await Future.delayed(const Duration(seconds: 3));
     _items = await _postService.fetchPostItemsAdvance();
     _changeLoading();
   }
@@ -65,15 +71,32 @@ class _ServiceLearnState extends State<ServiceLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(name ?? ''),
+        title: Text(
+          name ?? '',
+          style: const TextStyle(color: Colors.white),
+        ),
         actions: [
           _isLoading
-              ? const CircularProgressIndicator.adaptive()
-              : const SizedBox.shrink()
+              ? const CircularProgressIndicator.adaptive(
+                  backgroundColor: Colors.white,
+                )
+              : IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return const ServicePostLearn();
+                        },
+                        fullscreenDialog: true,
+                        settings: const RouteSettings()));
+                  },
+                  icon: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ))
         ],
       ),
       body: _items == null
-          ? const Placeholder()
+          ? const LoadingBar()
           : ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               itemCount: _items?.length ?? 0,

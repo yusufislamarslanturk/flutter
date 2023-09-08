@@ -16,7 +16,6 @@ class _CommentsLearnViewState extends State<CommentsLearnView> {
   List<CommentModel>? _commentsItem;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     postService = PostService();
     fetchItemsWithId(5);

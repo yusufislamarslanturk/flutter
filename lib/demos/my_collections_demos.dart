@@ -75,6 +75,7 @@ class CollectionModel {
       required this.price});
 }
 
+// ignore: camel_case_types
 class paddingUtility {
   final paddingTop = const EdgeInsets.only(top: 10);
   final paddingBottom = const EdgeInsets.only(bottom: 20);

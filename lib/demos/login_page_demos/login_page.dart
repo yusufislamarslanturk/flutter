@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/202/package/launch_manager.dart';
-import 'package:flutter_full_learn/202/package_learn_view.dart';
+import 'package:flutter_full_learn/202/service/service_learn_view.dart';
+import 'package:flutter_full_learn/demos/login_page_demos/register_learn_view.dart';
 import 'package:flutter_full_learn/demos/login_page_demos/visible_eye.dart';
 
 class LoginPage extends StatefulWidget {
@@ -31,8 +32,19 @@ class _LoginPageState extends State<LoginPage>
               'Kayıt Ol',
               style: TextStyle(color: Colors.white),
             ),
-            icon: const Icon(Icons.door_back_door_outlined),
-            onPressed: () {},
+            icon: const Icon(
+              Icons.door_back_door_outlined,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) {
+                      return const RegisterView();
+                    },
+                    fullscreenDialog: true,
+                    settings: const RouteSettings()),
+              );
+            },
           )
         ],
         title: const Text(_projectUtilities.title,
@@ -67,19 +79,23 @@ class _LoginPageState extends State<LoginPage>
             padding: const EdgeInsets.only(top: 200),
             child: TextButton(
                 style: TextButton.styleFrom(
-                    foregroundColor: Colors.grey.shade600),
+                    foregroundColor: Colors.transparent),
                 onPressed: () {
                   launchURL(Uri.parse(
                       'https://www.agarthateknoloji.com.tr'));
                 },
-                child: const Text('© Powered by Agartha Teknoloji')),
+                child: Text('© Powered by Agartha Teknoloji',
+                    style: TextStyle(color: Colors.grey.shade900))),
           ),
+          Text('Designed by Yusuf İslam ARSLANTÜRK',
+              style: TextStyle(color: Colors.grey.shade500))
         ],
       ),
     );
   }
 }
 
+// ignore: camel_case_types
 class _header extends StatelessWidget {
   const _header();
 
@@ -112,7 +128,7 @@ class _LoginButton extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
                 builder: (context) {
-                  return const PackageLearn();
+                  return const ServiceLearn();
                 },
                 fullscreenDialog: true,
                 settings: const RouteSettings()),
@@ -124,8 +140,7 @@ class _LoginButton extends StatelessWidget {
 
 // ignore: must_be_immutable
 class _InputTextField extends StatefulWidget {
-  _InputTextField(
-      {required this.labelText, required this.password});
+  _InputTextField({required this.labelText, required this.password});
   final String labelText;
   final bool password;
   bool isSecured = false;
@@ -172,6 +187,7 @@ mixin _projectUtilities {
   static const String title = 'Agartha ERP';
 }
 
+// ignore: camel_case_types
 class _projectPadding {
   static const EdgeInsetsGeometry simetrik =
       EdgeInsets.symmetric(horizontal: 20.0, vertical: 10);

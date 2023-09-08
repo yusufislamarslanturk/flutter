@@ -52,6 +52,7 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
   }
 }
 
+// ignore: camel_case_types
 class _inputDecoration {
   final mailDecoration = const InputDecoration(
       prefixIcon: Icon(Icons.mail),

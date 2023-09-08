@@ -47,6 +47,7 @@ class _NavigationLearnState extends State<NavigationLearn>
 }
 
 mixin NavigatorManager {
+  // ignore: non_constant_identifier_names
   void NavigateToWidget(BuildContext context, Widget widget) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -58,6 +59,7 @@ mixin NavigatorManager {
     );
   }
 }
+// ignore: non_constant_identifier_names
 Future<T?> NavigateToWidgetNormal<T>(
     BuildContext context, Widget widget) {
   return Navigator.of(context).push<T>(

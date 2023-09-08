@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/demos/login_page_demos/login_page.dart';
+import 'package:flutter_full_learn/202/animated_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(useMaterial3: true).copyWith(
+            actionIconTheme: ActionIconThemeData(
+                closeButtonIconBuilder: (context) => const Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.white,
+                    )),
             tabBarTheme: const TabBarTheme(
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.white70,
@@ -32,6 +37,6 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.black,
               elevation: 0,
             )),
-        home: const LoginPage());
+        home: const AnimatedLearnView());
   }
 }

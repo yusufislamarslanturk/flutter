@@ -69,10 +69,12 @@ class _ColorDemosState extends State<ColorDemos> {
 
 enum _MyColors { red, yellow, green }
 
+// ignore: camel_case_types
 class _colorContainer extends StatelessWidget {
   const _colorContainer({
     required this.color,
   });
+  // ignore: prefer_typing_uninitialized_variables
   final color;
   @override
   Widget build(BuildContext context) {
