@@ -12,6 +12,7 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
           title: const Text(
             'Kayıt Ol',
@@ -21,46 +22,48 @@ class _RegisterViewState extends State<RegisterView> {
               borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(20),
           ))),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(40),
-            child: Image.asset('assets/png/logo.png',
-                height: 175, width: 175),
-          ),
-          const _header(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _InputTextField(
-              labelText: 'Kullanici Adi',
-              password: false,
-              autoFill: const [AutofillHints.name],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(40),
+              child: Image.asset('assets/png/logo.png',
+                  height: 175, width: 175),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _InputTextField(
-                labelText: 'Email',
-                password: false,
-                autoFill: const [AutofillHints.email]),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _InputTextField(
-              labelText: 'Parola',
-              password: false,
-              autoFill: null,
-            ),
-          ),
-          Padding(
+            const _header(),
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: _InputTextField(
-                labelText: 'Parola Tekrar',
-                password: true,
+                labelText: 'Kullanici Adi',
+                password: false,
+                autoFill: const [AutofillHints.name],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _InputTextField(
+                  labelText: 'Email',
+                  password: false,
+                  autoFill: const [AutofillHints.email]),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _InputTextField(
+                labelText: 'Parola',
+                password: false,
                 autoFill: null,
-              )),
-          const _LoginButton()
-        ],
+              ),
+            ),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: _InputTextField(
+                  labelText: 'Parola Tekrar',
+                  password: true,
+                  autoFill: null,
+                )),
+            const _LoginButton()
+          ],
+        ),
       ),
     );
   }

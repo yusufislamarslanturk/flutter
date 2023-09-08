@@ -32,7 +32,7 @@ class _VisibleEyeButtonState extends State<VisibleEyeButton> {
           _isVisible
               ? Icons.visibility
               : Icons.visibility_off_outlined,
-          color: Colors.grey[700]),
+          color: Colors.grey[300]),
     );
   }
 }

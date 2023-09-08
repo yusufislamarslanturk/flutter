@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -50,46 +51,48 @@ class _LoginPageState extends State<LoginPage>
         title: const Text(_projectUtilities.title,
             style: TextStyle(color: Colors.white)),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(40),
-            child: Image.asset('assets/png/logo.png',
-                height: 175, width: 175),
-          ),
-          const _header(),
-          Padding(
-            padding: _projectPadding.simetrik,
-            child: _InputTextField(
-              labelText: 'Kullanıcı Adı',
-              password: true,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(40),
+              child: Image.asset('assets/png/logo.png',
+                  height: 175, width: 175),
             ),
-          ),
-          Padding(
-            padding: _projectPadding.simetrik,
-            child:
-                _InputTextField(labelText: 'Parola', password: false),
-          ),
-          Container(
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const _LoginButton(),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 200),
-            child: TextButton(
-                style: TextButton.styleFrom(
-                    foregroundColor: Colors.transparent),
-                onPressed: () {
-                  launchURL(Uri.parse(
-                      'https://www.agarthateknoloji.com.tr'));
-                },
-                child: Text('© Powered by Agartha Teknoloji',
-                    style: TextStyle(color: Colors.grey.shade900))),
-          ),
-          Text('Designed by Yusuf İslam ARSLANTÜRK',
-              style: TextStyle(color: Colors.grey.shade500))
-        ],
+            const _header(),
+            Padding(
+              padding: _projectPadding.simetrik,
+              child: _InputTextField(
+                labelText: 'Kullanıcı Adı',
+                password: true,
+              ),
+            ),
+            Padding(
+              padding: _projectPadding.simetrik,
+              child: _InputTextField(
+                  labelText: 'Parola', password: false),
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const _LoginButton(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 200),
+              child: TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.transparent),
+                  onPressed: () {
+                    launchURL(Uri.parse(
+                        'https://www.agarthateknoloji.com.tr'));
+                  },
+                  child: Text('© Powered by Agartha Teknoloji',
+                      style: TextStyle(color: Colors.grey.shade900))),
+            ),
+            Text('Designed by Yusuf İslam ARSLANTÜRK',
+                style: TextStyle(color: Colors.grey.shade500))
+          ],
+        ),
       ),
     );
   }
