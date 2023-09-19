@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, deprecated_member_use
+// ignore_for_file: unused_element, unused_field
 
 import 'dart:io';
 
@@ -30,8 +30,8 @@ class PostService implements IPostService {
           data: postModel);
 
       return response.statusCode == HttpStatus.created;
-    } on DioError catch (error) {
-      _ShowDebug.showDioError(error, this);
+    } on DioException catch (error) {
+      _ShowDebug.showDioException(error, this);
     }
     return false;
   }
@@ -44,8 +44,8 @@ class PostService implements IPostService {
           data: postModel);
 
       return response.statusCode == HttpStatus.ok;
-    } on DioError catch (error) {
-      _ShowDebug.showDioError(error, this);
+    } on DioException catch (error) {
+      _ShowDebug.showDioException(error, this);
     }
     return false;
   }
@@ -57,8 +57,8 @@ class PostService implements IPostService {
           await _dio.put('${_PostServicePaths.posts.name}/$id');
 
       return response.statusCode == HttpStatus.ok;
-    } on DioError catch (error) {
-      _ShowDebug.showDioError(error, this);
+    } on DioException catch (error) {
+      _ShowDebug.showDioException(error, this);
     }
     return false;
   }
@@ -75,8 +75,8 @@ class PostService implements IPostService {
           return datas.map((e) => PostModel.fromJson(e)).toList();
         }
       }
-    } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception, this);
+    } on DioException catch (exception) {
+      _ShowDebug.showDioException(exception, this);
     }
     return null;
   }
@@ -95,8 +95,8 @@ class PostService implements IPostService {
           return datas.map((e) => CommentModel.fromJson(e)).toList();
         }
       }
-    } on DioError catch (exception) {
-      _ShowDebug.showDioError(exception, this);
+    } on DioException catch (exception) {
+      _ShowDebug.showDioException(exception, this);
     }
     return null;
   }
@@ -104,11 +104,10 @@ class PostService implements IPostService {
 
 enum _PostServicePaths { posts, comments }
 
-// ignore: unused_field
 enum _PostQueryPaths { postId }
 
 class _ShowDebug {
-  static void showDioError<T>(DioError error, T type) {
+  static void showDioException<T>(DioException error, T type) {
     if (kDebugMode) {
       print(error.message);
       print(type);

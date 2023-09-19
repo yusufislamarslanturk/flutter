@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/demos/login_page_demos/login_page.dart';
+import 'package:flutter_full_learn/202/cache/secure_context/secure_context_learn.dart';
+import 'package:flutter_full_learn/202/cache/shaerd_list_cache.dart';
+import 'package:flutter_full_learn/202/cache/shared_learn_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(useMaterial3: true).copyWith(
+        theme: ThemeData.dark(useMaterial3: true).copyWith(
             actionIconTheme: ActionIconThemeData(
                 closeButtonIconBuilder: (context) => const Icon(
                       Icons.arrow_back_ios_new,
@@ -35,8 +37,9 @@ class MyApp extends StatelessWidget {
               systemOverlayStyle: SystemUiOverlayStyle.light,
               // Color.fromARGB(255, 140, 94, 20)
               backgroundColor: Colors.black,
+
               elevation: 0,
             )),
-        home: const LoginPage());
+        home: const ShareContextLearn());
   }
 }
