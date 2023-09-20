@@ -30,6 +30,7 @@ class _ShareContextLearnState extends State<ShareContextLearn> {
     _title = await _storage.read(key: _SecureKeys.token.name) ?? '';
 
     if (_title.isNotEmpty) {
+      // ignore: avoid_print
       print('onceden kullanilmis app ve token burada');
       _controller.text = _title;
     }

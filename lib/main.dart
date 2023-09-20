@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/202/cache/secure_context/secure_context_learn.dart';
-import 'package:flutter_full_learn/202/cache/shaerd_list_cache.dart';
-import 'package:flutter_full_learn/202/cache/shared_learn_cache.dart';
+import 'package:flutter_full_learn/202/alert_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +38,6 @@ class MyApp extends StatelessWidget {
 
               elevation: 0,
             )),
-        home: const ShareContextLearn());
+        home: const AlertLearn());
   }
 }
