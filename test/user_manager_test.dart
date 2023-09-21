@@ -3,15 +3,19 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   setUp(() {});
-  test('User calculate', () {
+  test('User calculate ', () {
     final users = [
-      GenericUser('ysf1', '11', 10),
-      GenericUser('ysf2', '12', 20),
-      GenericUser('ysf3', '13', 30),
-      GenericUser('ysf4', '14', 40),
+      const GenericUser('vb', '11', 10),
+      const GenericUser('vb', '11', 10),
+      const GenericUser('vb', '11', 20),
     ];
-    final result = UserManagement(AdminUser('vadmin', '1', 10, 1))
-        .calculateMoney(users);
-    expect(result, 100);
+    final userManagement =
+        UserManagement(const AdminUser('vadmin', '1', 15, 1));
+    final result = userManagement.calculateMoney(users);
+
+    // ignore: unused_local_variable
+    final respnse = userManagement.showNames<String>(users);
+
+    expect(result, 55);
   });
 }

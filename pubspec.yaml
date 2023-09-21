@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^5.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,13 +43,19 @@ dependencies:
   #cache
   shared_preferences: ^2.2.1
   flutter_secure_storage: ^9.0.0
+
+  equatable: ^2.0.5
   
   #google
   url_launcher: ^6.0.9
+  json_serializable: ^6.7.1
+  json_annotation: ^4.8.1
+  build_runner: ^2.4.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
