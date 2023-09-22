@@ -20,22 +20,20 @@ Map<String, dynamic> _$ResourceModelToJson(ResourceModel instance) =>
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       id: json['id'] as int?,
-      status:
-          $enumDecodeNullable(_$StatusCodeEnumMap, json['status']),
+      status: $enumDecodeNullable(_$StatusCodeEnumMap, json['status']),
       name: json['name'] as String?,
       year: json['year'] as int?,
       color: json['color'] as String?,
-      pantoneValue: _fetchCustom(json['pantoneValue'] as String?),
+      pantoneValue: _fetchCustom(json['pantone-value'] as String?),
       price: json['price'] as String?,
     );
 
-// ignore: unused_element
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'year': instance.year,
       'color': instance.color,
-      'pantoneValue': instance.pantoneValue,
+      'pantone-value': instance.pantoneValue,
       'price': instance.price,
       'status': _$StatusCodeEnumMap[instance.status],
     };
